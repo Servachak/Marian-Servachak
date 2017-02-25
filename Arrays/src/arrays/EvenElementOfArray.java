@@ -17,9 +17,10 @@ public class EvenElementOfArray {
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
-		for (int i : arr) {
-			if (i %2 !=0){
-				i = 2;
+		for (int i : arr) { // Звертаємось до самого значення в комірці
+			if (i %2 !=0){  // якщо значення маси яке записано в комірку масиву 
+				            //при діленні по модулю на 2 Не рівне 0 
+				i = 2;     // то замінити його на 2 (наприклад 3 на 2, 5 на 2 і т.д)
 				
 			}System.out.print(i +" ");
 		}
