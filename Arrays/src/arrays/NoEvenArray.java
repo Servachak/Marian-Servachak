@@ -1,3 +1,8 @@
+//Создайте массив из 8 случайных целых чисел из отрезка [1;10].
+//Выведите массив на экран в строку. 
+//Замените каждый элемент с нечётным индексом на ноль. 
+//Снова выведете массив на экран на отдельной строке.
+
 package arrays;
 
 import java.util.Arrays;
@@ -5,18 +10,27 @@ import java.util.Arrays;
 public class NoEvenArray {
 
 	public static void main(String[] args) {
-		int array[] = {1,2,3,4,5,6,7,9,0};
-		int b = 0;
-		for (int j = 0; j < array.length; j++) {
-			System.out.print(array[j]);
+		int[] array = new int[10]; // Створюємо масив з 10 елементів
+		for (int j = 0; j < array.length; j++) { //запускаємо бігунця який буде присвоювати
+			                                     //якесь значення в кожну комірку масиву
+			array[j] = (int) (Math.random() * 9 + 1);//створюємо випадкове значення від 1 до 10
+			System.out.print(array[j]); // виводимо ці значення
 		}
-		System.out.println();
-		
-		for (int i = 1; i < array.length; i++) {
-			Arrays.sort(array);
-		if (array[i]%2 == 0)
-			System.out.print(array[i]);
-			
+		System.out.println(); //розділяємо строки після циклу обов'язково після закінчення циклу
+
+		for (int i = 0; i < array.length; i++) { //  створюємо бігунця який буде перевіряти комірки 
+			                                     //на те яке там число 
+			Arrays.sort(array);   // Метод який сорту мвсиви від меншого до більшого 
+			System.out.print(array[i]); //виводимо на консоль відсортований масив в рядок
+		}
+		System.out.println("");//розділяємо строки після циклу обов'язково після закінчення циклу
+		for (int j = 0; j < array.length; j++) {//  створюємо бігунця який буде перевіряти комірки 
+                                               //на те яке там число 
+
+			if (array[j] % 2 != 0) { //якщо елемент масиву при діленні по модолю на 2 НЕ рівний 0
+				 array[j] = 0;      // то замінити його на 0
+				
+			}System.out.print(array[j]); // виводимо масив з парними елементами та 0 замість не парних
 		}
 
 	}
