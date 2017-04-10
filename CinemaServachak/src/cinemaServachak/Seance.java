@@ -33,7 +33,7 @@ public class Seance {
 		return endTime;
 	}
 
-	public void setEndTime() {
+	public void setEndTime(Time endTime) {
 		this.endTime = new Time(movie.getDuration().getHour() + startTime.getHour(),movie.getDuration().getMin() + startTime.getMin());
 	}
 
