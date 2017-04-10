@@ -48,7 +48,9 @@ public class Schedule {
 			
 			Iterator<Seance> iterator = seance.iterator();
 			while(iterator.hasNext()){
-				if ()
+				if (iterator.next().getMovie().getTitle().equalsIgnoreCase(titleNameForRemove)){
+					iterator.remove();
+				}
 			}
 		}
 	}
