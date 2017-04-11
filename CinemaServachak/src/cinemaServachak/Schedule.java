@@ -37,6 +37,7 @@ public class Schedule {
 		int startTimeHour = Main.scanner.nextInt();
 		System.out.println("Enter Start time at Min");
 		int startTimeMin = Main.scanner.nextInt();
+		
 		seance.add(new Seance(new Movie(title, new Time(durationHour, durationMin)), new Time(startTimeHour, startTimeMin)));
 	}
 	public void removeSeance(){

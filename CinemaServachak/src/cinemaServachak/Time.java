@@ -15,7 +15,7 @@ public class Time {
 	}
 
 	public void setHour(int hour) {
-		if (hour >= 0 && hour <= 24){
+		if (hour >= 0 && hour <= 23){
 		this.hour = hour;
 		}else{
 			System.out.println("Day has 24 hours");
@@ -27,7 +27,7 @@ public class Time {
 	}
 
 	public void setMin(int min) {
-		if(min >= 0 && min <= 60){
+		if(min >= 0 && min <= 59){
 			this.min = min;
 		}else{
 			System.out.println("Hour has 60 min");
