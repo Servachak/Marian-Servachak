@@ -88,6 +88,14 @@ public class Schedule {
 
 		seance.add(new Seance(new Movie(title, durationTime), startTime));
 		
+		int endTimeHour = startTime.getHour() + durationTime.getHour();
+		int endTimeMin = startTime.getMin() + durationTime.getMin();
+		if (endTimeMin > 60){
+			endTimeHour = endTimeHour + (endTimeMin / 60);
+			endTimeMin = endTimeMin % 60;
+		}
+		Time endTine = new Time();
+		
 		
 
 	}
