@@ -47,8 +47,7 @@ public class Seance {
 	}
 	
 	public void setEndTime(Time endTime){
-		endTime.setHour(movie.getDuration().getHour() + startTime.getHour());
-		
+				
 		//		int endFilmTimeHour = movie.getDuration().getHour() + startTime.getHour();
 //		int endFilmTimeMin = movie.getDuration().getMin() + startTime.getMin();
 //			
