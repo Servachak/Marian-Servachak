@@ -5,9 +5,15 @@ public class Time {
 	private int hour;
 	private int min;
 
+	public Time() {
+
+	}
+
 	public Time(int hour, int min) {
-		this.hour = hour;
-		this.min = min;
+	
+				this.hour = hour;
+				this.min = min;
+			
 	}
 
 	public int getHour() {
@@ -23,6 +29,7 @@ public class Time {
 			} else {
 				System.out.println("Day has 24 hours");
 				System.out.println("Enter again");
+				hour = Main.scanner.nextInt();
 			}
 		}
 
@@ -41,10 +48,12 @@ public class Time {
 			} else {
 				System.out.println("Hour has 60 min");
 				System.out.println("Enter again");
+				min = Main.scanner.nextInt();
 			}
 		}
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Time [hour=" + hour + ", min=" + min + "]";

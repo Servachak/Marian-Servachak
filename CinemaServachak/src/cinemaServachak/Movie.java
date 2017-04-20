@@ -4,7 +4,14 @@ public class Movie {
 
 	private String title;
 	private Time duration;
+
 	
+
+	public Movie() {
+		super();
+		
+	}
+
 	public Movie(String title, Time duration) {
 		super();
 		this.title = title;
@@ -24,6 +31,7 @@ public class Movie {
 	}
 
 	public void setDuration(Time duration) {
+
 		this.duration = duration;
 	}
 
@@ -31,5 +39,7 @@ public class Movie {
 	public String toString() {
 		return "Movie [title=" + title + ", duration=" + duration + "]";
 	}
+
 	
+
 }
