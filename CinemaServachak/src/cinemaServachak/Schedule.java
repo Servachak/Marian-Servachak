@@ -78,6 +78,7 @@ public class Schedule {
 		Time startTime = new Time();
 
 		System.out.println("Enter Start time at Hour");
+		
 		int startTimeHour = Main.scanner.nextInt();
 		startTime.setHour(startTimeHour);
 

@@ -14,7 +14,7 @@ public class Seance {
 		super();
 		this.movie = movie;
 		this.startTime = startTime;
-//		this.endTime = new Time();
+
 				int endFilmHour = movie.getDuration().getHour() + startTime.getHour();
 				int endFilmMin = movie.getDuration().getMin() + startTime.getMin();
 				if (endFilmMin > 60 ){
@@ -22,7 +22,7 @@ public class Seance {
 					endFilmMin = endFilmMin % 60;
 				}
 				this.endTime = new Time(endFilmHour, endFilmMin);
-//				this.endTime = new Time(movie.getDuration().getHour() + startTime.getHour(), movie.getDuration().getMin() + startTime.getMin());
+
 
 	}
 

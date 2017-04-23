@@ -7,6 +7,9 @@ public class Main {
    static Scanner scanner = new Scanner(System.in);
    
 	public static void main(String[] args) {
+		Cinema cinema = new Cinema();
+		cinema.workCinema();
+		
 
 //
 //		Time time = new Time();
@@ -17,14 +20,8 @@ public class Main {
 //		System.out.println("Enter min");
 //		int min  = scanner.nextInt();
 //		time.setMin(min);
-//		
-		Schedule schedule = new Schedule();
-		for (int i = 0; i < 2; i++) {
-			
-			schedule.addSeance();
-			System.out.println(schedule.getSeance());
-		}
-		System.out.println();
+		
+//		System.out.println();
 	
 	
 	
