@@ -1,15 +1,18 @@
 package cinemaServachak;
 
+import java.util.List;
+
 public class Seance {
 
 	private Movie movie;
 	private Time startTime;
 	private Time endTime;
 
+	List<Movie> movies = new java.util.ArrayList<>();
 	public Seance(){
-		
-		
+				
 	}
+	
 	public Seance(Movie movie, Time startTime) {
 		super();
 		this.movie = movie;
@@ -47,32 +50,8 @@ public class Seance {
 	}
 	
 	public void setEndTime(Time endTime){
-				
-		//		int endFilmTimeHour = movie.getDuration().getHour() + startTime.getHour();
-//		int endFilmTimeMin = movie.getDuration().getMin() + startTime.getMin();
-//			
-//		if( endFilmTimeMin > 60){
-//			endTime.setHour(endFilmTimeHour + (endFilmTimeMin / 60));
-//			endTime.setMin(endFilmTimeMin % 60);
-//		}
-//		
 		this.endTime = endTime;
 	}
-	
-//	public void setEndTime(Time durationFilmTime, Time startFilmTime) {
-//		int endFilmTimeHour = durationFilmTime.getHour() + startFilmTime.getHour();
-//		int endFilmTimeMin = durationFilmTime.getMin() + startFilmTime.getMin();
-//		for (int i = 0; i < 24; i++) {
-//			if(endFilmTimeMin > 60){
-//				endFilmTimeHour = endFilmTimeHour + (endFilmTimeMin * 60);
-//				endFilmTimeMin = endFilmTimeMin % 60;
-//				this.endTime = new Time(endFilmTimeHour, endFilmTimeMin);
-//			}else{
-//				break;
-//			}
-//		}
-//		
-//		}
 	
 
 	@Override
@@ -80,4 +59,5 @@ public class Seance {
 		return "Seanse [movie=" + movie + ", startTime=" + startTime + ", endTime=" + endTime + "]";
 	}
 
+	
 }

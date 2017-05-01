@@ -1,14 +1,29 @@
 package cinemaServachak;
 
+import java.util.Comparator;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Main {
 	
    static Scanner scanner = new Scanner(System.in);
    
 	public static void main(String[] args) {
+		TreeMap<DaysWeek,Schedule> map = new TreeMap<>(new Comparator<DaysWeek>() {
+
+			@Override
+			public int compare(DaysWeek o1, DaysWeek o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		});
+		Schedule  schedule = new Schedule();
+		schedule.addSeance();
 		Cinema cinema = new Cinema();
-		cinema.workCinema();
+		String day = Main.scanner.next();
+		cinema.addSeansToDay(day);
+//		cinema.workCinema();
+//		map.values();
 		
 
 //
