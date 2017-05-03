@@ -9,8 +9,12 @@ public class Main {
 	public static final String NOLYK = " O ";
 
 	public static String aktyvnyyGravets;
+	public static String aktyvnyyGravets1;
+	public static String GravetsX;
+	public static String GravetsO;
 
 	public static Scanner scanner = new Scanner(System.in);
+	
 
 	public static final int RIADKIV = 3, STOVPCHYKIV = 3;
 	public static String[][] sitka = new String[RIADKIV][STOVPCHYKIV];
@@ -19,18 +23,26 @@ public class Main {
 	public static final int SATUS_DRA_TRYVAE = 0, STATUS_NICHYYA = 1, STATUS_PEREMOGA_X = 3, STATUS_PEREMOGA_O = 4;
 
 	public static void main(String[] args) {
+		System.out.println("¬вед≥ть ≥м€ першого гравц€");
+		GravetsX = scanner.next(); 
+		
+		System.out.println("¬вед≥ть ≥м€ другого гравц€");
+		GravetsO = scanner.next();
 		PochatyGru();
 		do {
+			
+			
 			otrymatyVvedennyGravtsi();
 			ProanalizuvatySitcu();
 			vyvestySitku();
 			if (statusGry == STATUS_PEREMOGA_X) {
-				System.out.println("X winer");
+				System.out.println("winer " + GravetsX);
 			} else if (statusGry == STATUS_PEREMOGA_O) {
-				System.out.println("O winer");
+				System.out.println("winer " + GravetsO );
 			} else if (statusGry == STATUS_NICHYYA) {
 				System.out.println("no winer");
 			}
+			aktyvnyyGravets1 = (aktyvnyyGravets1 == GravetsX ? GravetsO : GravetsX);
 			aktyvnyyGravets = (aktyvnyyGravets == KHRESTYK ? NOLYK : KHRESTYK);
 		} while (statusGry == SATUS_DRA_TRYVAE);
 
@@ -43,14 +55,15 @@ public class Main {
 			}
 		}
 		aktyvnyyGravets = KHRESTYK;
-		System.out.println("“в≥й х≥д " + aktyvnyyGravets);
+		aktyvnyyGravets1 = GravetsX;
+		System.out.println("“в≥й х≥д " + aktyvnyyGravets1);
 		vyvestySitku();
 	}
 
 	public static void otrymatyVvedennyGravtsi() {
 		boolean vvedeniaDiysne = false;
 		do {
-			System.out.println("√равець " + aktyvnyyGravets + " введ≥ть р€док ( 1 - 3) через проб≥л");
+			System.out.println("√равець " + aktyvnyyGravets1 + " введ≥ть р€док ( 1 - 3) через проб≥л");
 			int riad = scanner.nextInt() - 1;
 			int stovp = scanner.nextInt() - 1;
 
@@ -59,7 +72,7 @@ public class Main {
 				vvedeniaDiysne = true;
 			} else {
 				System.out.println("¬ибране розм≥щенн€ (" + (riad + 1) + "," + (stovp + 1)
-						+ " )не може бути виконане. —пробуц ще ... ");
+						+ " )не може бути виконане. —пробуй ще ... ");
 			}
 		} while (!vvedeniaDiysne);
 	}
