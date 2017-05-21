@@ -32,6 +32,23 @@ public class CountryController {
 	@GetMapping("deleteCountry/{id}")
 	public String deleteCountry(@PathVariable int id){
 		countryService.delete(id);
-		return "country";
+		return "redirect:/country";
+	}
+	@GetMapping("/updateCountry/{id}")
+	public String updateCountry(@PathVariable int id, Model model){
+		Country country = countryService.findOne(id);
+		model.addAttribute("countries", country);
+		
+		return "updateCountry";
+	}
+	@PostMapping("/updateCountry/{id}")
+	public String updatrCountry(@RequestParam String name,
+								@PathVariable int id){
+		
+		Country country = countryService.findOne(id);
+		country.setName(name);
+		countryService.update(country);
+		return "redirect:/country";
+		
 	}
 }

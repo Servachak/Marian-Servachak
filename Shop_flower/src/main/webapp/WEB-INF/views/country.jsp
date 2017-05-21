@@ -21,7 +21,7 @@
 </div>
 <ol>
 	<c:forEach var="coun" items="${countries}">
-	<li>${coun.name}<a href= "/deleteCountry/${coun.id}">delete</a>
+	<li>${coun.name}<a href= "/deleteCountry/${coun.id}">  delete </a> <a href="/updateCountry/${coun.id}"> update</a>
 	</li>
 	</c:forEach>
 

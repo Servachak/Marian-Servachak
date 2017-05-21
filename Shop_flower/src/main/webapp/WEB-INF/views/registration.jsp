@@ -26,7 +26,8 @@
 </div>
 	<ol>
 		<c:forEach var= "u" items="${users}" >
-		<li>${u.name} ${u.email} ${u.password} ${u.sex}<a href= "/deleteUser/${u.id}">delete</a></li>
+		<li>${u.name} ${u.email} ${u.password} ${u.sex}<a href= "/deleteUser/${u.id}">delete</a> <a href="/updateUser/${u.id}"> update</a>
+		</li>
 		</c:forEach>
 		</ol>
 </body>

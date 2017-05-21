@@ -37,6 +37,30 @@ public class UserController {
 	@GetMapping("/deleteUser/{id}")
 	public String deleteUser(@PathVariable int id){
 		userService.delete(id);
-		return "registration";
+		return "redirect:/registration";
+	}
+	@GetMapping("/updateUser/{id}")
+	public String userUpdate(@PathVariable int id, Model model){
+		User user = userService.findOne(id);
+		model.addAttribute("users", user);
+		return "updateUser";
+		
+	}
+	
+	@PostMapping("/updateUser/{id}")
+	public String updateUser(@RequestParam String name,
+		    @RequestParam String email,
+			@RequestParam String password,
+			@RequestParam String sex,
+			@PathVariable int id){
+
+		User user = userService.findOne(id);
+		user.setName(name);
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setSex(sex);
+		userService.update(user);
+		
+		return "redirect:/registration";
 	}
 }

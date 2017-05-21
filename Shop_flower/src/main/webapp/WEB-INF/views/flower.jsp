@@ -21,7 +21,8 @@
 </div>
 <ol>
 <c:forEach var="f" items="${flowers}">
-   <li> ${f.name} ${f.color} ${f.price}<a href="/deleteFlower/${f.id}">delete</a></li>
+   <li> ${f.name} ${f.color} ${f.price}<a href="/deleteFlower/${f.id}">delete</a> <a href="/updateFlower/${f.id}"> update </a>
+   </li>
 </c:forEach>
 </ol>
 </body>

@@ -41,6 +41,28 @@ public class FlowerController {
 	public String deleteFlower(@PathVariable int id){
 		
 		flowerService.delete(id);
-		return "flower";
+		return "redirect:/flower";
+	}
+	
+	@GetMapping("/updateFlower/{id}")
+	public String updateFlower(@PathVariable int id, Model model){
+		Flower flower = flowerService.findOne(id);
+		
+		model.addAttribute("flowers", flower);
+		return "updateFlower";
+	} 
+	
+	@PostMapping("/updateFlower/{id}")
+	public String updateFlower(@RequestParam String flowerName,
+								@RequestParam String flowerColor,
+								@RequestParam String flowerPrice,
+								@PathVariable int id){
+		
+		Flower flower = flowerService.findOne(id);
+		flower.setName(flowerName);
+		flower.setColor(flowerColor);
+		flower.setPrice(Integer.parseInt(flowerPrice));
+		flowerService.update(flower);
+		return "redirect:/flower";
 	}
 }
