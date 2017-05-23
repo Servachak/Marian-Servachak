@@ -14,14 +14,22 @@
 		<br>
 		<input type="text" name= "flowerColor" placeholder= "Enter color">
 		<br>
-		<input type="text" name= "flowerPrice" placeholder= "Enter price">
+		<input type="number" name= "flowerPrice" placeholder= "Enter price">
+		<br>
+		<select name="coun">
+			<c:forEach var="coun" items="${countries}">
+			<option value="${coun.id}">${coun.name}</option>
+			</c:forEach>
+		</select>
 		<br>
 		<button>save flower</button>
 		</form>
 </div>
 <ol>
 <c:forEach var="f" items="${flowers}">
-   <li> ${f.name} ${f.color} ${f.price}<a href="/deleteFlower/${f.id}">delete</a> <a href="/updateFlower/${f.id}"> update </a>
+   <li> ${f.name} ${f.color} ${f.price} 
+   <c:forEach var="coun" items="${f.countrys}">${coun.name}
+   </c:forEach><a href="/deleteFlower/${f.id}">delete</a> <a href="/updateFlower/${f.id}"> update </a>
    </li>
 </c:forEach>
 </ol>

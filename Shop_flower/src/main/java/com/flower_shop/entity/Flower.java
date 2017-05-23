@@ -2,6 +2,7 @@ package com.flower_shop.entity;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -25,15 +26,15 @@ public class Flower {
 	
 	@ManyToMany
 	@JoinTable(name = "flower_country", joinColumns = @JoinColumn(name = "id_country"), inverseJoinColumns = @JoinColumn(name = "flower_id"))
-	private List<Country> countrys;
+	private List<Country> countrys = new ArrayList<>();
 	
 	@ManyToMany
 	@JoinTable(name = "user_flower", joinColumns = @JoinColumn(name = "id_user"), inverseJoinColumns = @JoinColumn(name = "id_Flower"))
-	private List<User> users;
+	private List<User> users = new ArrayList<>();
 	
 	@ManyToMany
 	@JoinTable(name = "orders_flower", joinColumns = @JoinColumn(name = "id_orders"), inverseJoinColumns = @JoinColumn(name = "id_flower"))
-	private List<Orders> orders;
+	private List<Orders> orders = new ArrayList<>();
 	
 	public Flower() {
 		

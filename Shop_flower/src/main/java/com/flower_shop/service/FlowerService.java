@@ -7,7 +7,7 @@ import com.flower_shop.entity.Flower;
 
 public interface FlowerService {
 
-	void save(Flower flower);
+	void save(Flower flower, int coun);
 
 	List<Flower> findAll();
 
@@ -16,4 +16,6 @@ public interface FlowerService {
 	void delete(int id);
 
 	void update(Flower flower);
+	
+	List<Flower> flowerWithCountry();
 }
