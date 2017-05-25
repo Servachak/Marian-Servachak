@@ -6,17 +6,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/country.css" type="text/css">
 </head>
 <body>
 
-<div style="text-align: center; margin-top:  5%">
+ 
+<div class="form" style="text-align: center; margin-top:  5%">
 
 	<form action="/country" method="post">
-	
-		<input type="text" name="countryName" placeholder=" Enter name">
-			<br>
-			<br>
-			<button>save country</button>
+	 <div class="countryName">
+		<input type="text" name="countryName" placeholder=" Enter Country">
+		</div>
+		<div class="login">
+			 <p><input type="submit" value="Save Country"></p>
+			 </div>
 			</form>
 </div>
 <ol>

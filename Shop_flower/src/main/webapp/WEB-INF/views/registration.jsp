@@ -6,11 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+	<link rel="stylesheet" href="/css/registration.css" type="text/css">
 </head>
 <body>
-<div style="text-align: center; margin-top: 10%">
-
-	<form action="/registration" method="post">
+<div class="login" >
+	<div class="login-triangle"></div>
+	 <h2 class="login-header">Log in</h2>
+	<form class="login-container" action="/registration" method="post">
 	
 		<input type="text" name= "userName" placeholder=" Enter name">
 		<br>
@@ -21,7 +23,7 @@
 		<input type="text" name= "userSex"  placeholder=" Enter sex">
 		<br>
 		<br>
-		<button>save User</button>
+		 <p><input type="submit" value="Log in"></p>
 		</form>
 </div>
 	<ol>

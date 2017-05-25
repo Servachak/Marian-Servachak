@@ -69,9 +69,9 @@ public class FlowerController {
 		return "redirect:/flower";
 	}
 	
-	@GetMapping("/deleteFlower/{id}")
-	public String deleteCountryFromFlower(@PathVariable int id){
-		flowerService.findOne(id);
-		return "redirect:/Flower";
-	}
+//	@GetMapping("/deleteFlower/{id}")
+//	public String deleteCountryFromFlower(@PathVariable int id){
+//		flowerService.findOne(id);
+//		return "redirect:/flower";
+//	}
 }

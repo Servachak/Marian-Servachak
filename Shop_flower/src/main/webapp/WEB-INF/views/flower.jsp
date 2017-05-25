@@ -6,25 +6,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/css/flower.css" type="text/css">
 </head>
 <body>
-<div style="text-align: center; margin-top: 10%">
-	<form action="/flower" method="post">
-		<input type="text" name= "flowerName" placeholder= "Enter flower">
-		<br>
-		<input type="text" name= "flowerColor" placeholder= "Enter color">
-		<br>
-		<input type="number" name= "flowerPrice" placeholder= "Enter price">
-		<br>
-		<select name="coun">
+<div class="container">  
+  <form id="contact" action="/flower" method="post">
+    <h3>My Flowers</h3>
+    <fieldset>
+      <input type="text" name= "flowerName" placeholder= "Enter flower" required autofocus>
+    </fieldset>
+    <fieldset>
+     <input type="text" name= "flowerColor" placeholder= "Enter color" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+     <input type="number" name= "flowerPrice" placeholder= "Enter price" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+     <select name="coun" tabindex="4" required>
 			<c:forEach var="coun" items="${countries}">
 			<option value="${coun.id}">${coun.name}</option>
 			</c:forEach>
 		</select>
-		<br>
-		<button>save flower</button>
-		</form>
+    </fieldset>
+        <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Save Flower</button>
+    </fieldset>
+  </form>
 </div>
+
 <ol>
 <c:forEach var="f" items="${flowers}">
    <li> ${f.name} ${f.color} ${f.price} 
